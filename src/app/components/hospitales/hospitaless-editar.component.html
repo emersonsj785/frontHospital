@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="card bg-light mb-3">
+        <div class="card-header">Buscar Hospital</div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="idHospitalInput">ID del Hospital:</label>
+                <input type="number" id="idHospitalInput" class="form-control" [(ngModel)]="id">
+            </div>
+            <button class="btn btn-primary" (click)="verHospital()">Ver Hospital</button>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <app-hospitaless-form
+        [hospital]="hospital"
+          titulo="Bienvenido a Editar" 
+          tituloAccion="Actualizar">
+        </app-hospitaless-form>
+    </div>
+    
+</div>

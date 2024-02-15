@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-link {
+    color: white !important; /* Texto blanco */
+    background-color: #FFA500 !important; /* Fondo naranja suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.nav-link.active {
+    color: #FFA500 !important; /* Texto naranja */
+    background-color: white !important; /* Fondo blanco */
+}
+
+

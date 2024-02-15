@@ -1,0 +1,52 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <button class="btn btn-secondary m-2" routerLink="/home">Volver a Buscar</button>
+        <form>
+            <div class="form-group">
+                <label form="nombre">Nombre</label>
+                <input type="text" name="nombre" class="form-control"
+                [(ngModel)]="hospital.nombre">
+            </div>
+            <div class="form-group">
+                <label form="antiguedad">Antiguedad</label>
+                <input type="text" name="antiguedad" class="form-control"
+                [(ngModel)]="hospital.antiguedad">
+            </div>
+            <div class="form-group">
+                <label form="idDistrito">Distrito</label>
+                <input type="text" name="idDistrito" class="form-control"
+                [(ngModel)]="hospital.idDistrito">
+            </div>
+            <div class="form-group">
+                <label form="area">Area</label>
+                <input type="text" name="area" class="form-control"
+                [(ngModel)]="hospital.area">
+            </div>
+            <div class="form-group">
+                <label form="idSede">Sede</label>
+                <input type="text" name="idSede" class="form-control"
+                [(ngModel)]="hospital.idSede">
+            </div>
+            <div class="form-group">
+                <label form="idGerente">Gerente</label>
+                <input type="text" name="idGerente" class="form-control"
+                [(ngModel)]="hospital.idGerente">
+            </div>
+            <div class="form-group">
+                <label form="idCondicion">Condicion</label>
+                <input type="text" name="idCondicion" class="form-control"
+                [(ngModel)]="hospital.idCondicion">
+            </div>
+            <div class="form-group">
+                <label form="fechaRegistro">Fecha Registro</label>
+                <input type="date" name="fechaRegistro" class="form-control"
+                [(ngModel)]="hospital.fechaRegistro">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="realizarAccion()">
+                    {{tituloAccion}}</button>
+            </div>
+        </form>
+    </div>
+</div>

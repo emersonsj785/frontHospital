@@ -1,0 +1,89 @@
+<div class="card bg-light mb-3">
+    <div class="card-body">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <div style="border: 1px solid #ccc; padding: 20px; margin: 0 auto; width: fit-content;">
+                    <div style="text-align: center;">
+                        <div style="margin-bottom: 10px;">
+                            <label for="tipo1">Por Hospital:</label>
+                            <input type="radio" name="tipo" (change)="tipo = 1" id="tipo1">
+                            <input type="number" id="id1" name="id1" [(ngModel)]="id" placeholder="ID">
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <label for="tipo2">Por Sede:</label>
+                            <input type="radio" name="tipo" (change)="tipo = 2" id="tipo2">
+                            <select name="sede" id="sede" [(ngModel)]="id">
+                                <option value="" disabled selected>Selecciona una sede</option>
+                                <option *ngFor="let sede of sedes" [value]="sede.idSede">{{ sede.idSede }} - {{
+                                    sede.descSede }}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h4>Buscar Hospitales</h4>
+                            <form (submit)="buscarHospitales()" style="text-align: center;">
+                                <button class="btn btn-primary" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>Listado de Hospitales</h4>
+            <table class="table table-hover table-striped" *ngIf="hospitales.length > 0">
+                <thead>
+                    <tr>
+                        <th>IdHospital</th>
+                        <th>Nombre</th>
+                        <th>Antigüedad</th>
+                        <th>IdDistrito</th>
+                        <th>DescDistrito</th>
+                        <th>IdSede</th>
+                        <th>DescSede</th>
+                        <th>IdGerente</th>
+                        <th>DescGerente</th>
+                        <th>IdCondicion</th>
+                        <th>DescCondicion</th>
+                        <th>FechaRegistro</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hospital of hospitales">
+                        <td>{{ hospital.idHospital }}</td>
+                        <td>{{ hospital.nombre }}</td>
+                        <td>{{ hospital.antiguedad }}</td>
+                        <td>{{ hospital.idDistrito }}</td>
+                        <td>{{ hospital.descDistrito }}</td>
+                        <td>{{ hospital.idSede }}</td>
+                        <td>{{ hospital.descSede }}</td>
+                        <td>{{ hospital.idGerente }}</td>
+                        <td>{{ hospital.descGerente }}</td>
+                        <td>{{ hospital.idCondicion }}</td>
+                        <td>{{ hospital.descCondicion}}</td>
+                        <td>{{ hospital.fechaRegistro | date}}</td>
+                        <td>
+                            <!-- Botón para eliminar -->
+                            <button class="btn btn-danger" (click)="mostrarConfirmacionEliminar(hospital.idHospital)">Eliminar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        Existen {{ numHospitalesEncontrados }} Hospital(es)
+        <br>
+        <a href="/home">Volver a Menú</a><br>
+        <a href="/hospitales/form">Agregar Hospital</a><br>
+        <a href="/hospitales/editar">Editar Hospital</a>
+    </div>
+    <div id="confirmDialog" class="confirm-dialog">
+        <div class="confirm-content">
+            <p>¿Desea eliminar el registro?</p>
+            <button id="btnSi">Sí</button>
+            <button id="btnNo">No</button>
+        </div>
+    </div>
+</div>

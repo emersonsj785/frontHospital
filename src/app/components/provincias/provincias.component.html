@@ -1,0 +1,21 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{descProvincia}}</div>
+    <div class="card-body">
+        <table class="table table-horver table-striped">
+            <thead>
+                <tr>
+                    <th>ID Provincia</th>
+                    <th>Descripción Provincia</th>
+                    <th>Fecha de Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let provincia of provincias">
+                    <td>{{provincia.idProvincia}}</td>
+                    <td>{{provincia.descProvincia}}</td>
+                    <td>{{provincia.fechaRegistro | date: 'yyyy/MM/dd'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
